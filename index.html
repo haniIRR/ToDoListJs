@@ -14,18 +14,14 @@
     class="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 p-6"
   >
     <div class="max-w-5xl mx-auto">
-      <!-- Main Form -->
-
+      <h1
+        class="text-4xl font-bold text-center bg-gradient-to-r from-indigo-600 to-pink-500 text-transparent bg-clip-text mb-8"
+      >
+        ✨ My ToDo List
+      </h1>
       <form class="bg-white/90 backdrop-blur rounded-3xl shadow-2xl p-8 mb-10">
-        <h1
-          class="text-4xl font-bold text-center bg-gradient-to-r from-indigo-600 to-pink-500 text-transparent bg-clip-text mb-8"
-        >
-          ✨ My ToDo List
-        </h1>
-
-        <!-- Task Input -->
-
         <input
+          id="taskTitle"
           type="text"
           placeholder="What do you want to do?"
           class="w-full px-5 py-4 rounded-2xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 mb-8 text-gray-700"
@@ -39,7 +35,7 @@
           <div class="flex flex-wrap gap-4 colorSelect">
             <button
               type="button"
-              class="color w-9 h-9 rounded-full bg-red-400 shadow-md hover:scale-110 transition ring-4 ring-offset-2 ring-red-400"
+              class="color w-9 h-9 rounded-full bg-red-400 shadow-md hover:scale-110 transition"
               data-color="red"
             ></button>
 
@@ -118,6 +114,7 @@
             <label class="block mb-2 text-gray-600"> 📅 Choose Day </label>
 
             <input
+              id="dayTask"
               type="date"
               class="w-full p-3 rounded-xl border focus:ring-2 focus:ring-indigo-300"
             />
@@ -127,6 +124,7 @@
             <label class="block mb-2 text-gray-600"> ⏰ Choose Time </label>
 
             <input
+              id="timeTask"
               type="time"
               class="w-full p-3 rounded-xl border focus:ring-2 focus:ring-indigo-300"
             />
@@ -136,6 +134,7 @@
             <label class="block mb-2 text-gray-600"> 🏷 Tag </label>
 
             <input
+              id="tagTask"
               type="text"
               placeholder="study..."
               class="w-full p-3 rounded-xl border focus:ring-2 focus:ring-indigo-300"
@@ -147,6 +146,7 @@
 
         <div class="flex justify-center gap-5">
           <button
+            id="addbtn"
             class="w-16 h-16 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-3xl shadow-lg hover:scale-105 transition"
           >
             +
@@ -181,7 +181,7 @@
           </thead>
 
           <tbody>
-            <tr class="border-b hover:bg-indigo-50 transition">
+            <!-- <tr class="border-b hover:bg-indigo-50 transition">
               <td class="p-4">1</td>
 
               <td class="p-4 font-semibold">Learn JavaScript</td>
@@ -209,7 +209,7 @@
               <td class="p-4 text-center">✏️</td>
 
               <td class="p-4 text-center">🗑️</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -223,18 +223,6 @@
       </div>
     </div>
 
-    <script>
-      const colors = document.querySelectorAll(".color");
-
-      colors.forEach((color) => {
-        color.addEventListener("click", () => {
-          colors.forEach((item) => {
-            item.classList.remove("ring-4", "ring-offset-2");
-          });
-
-          color.classList.add("ring-4", "ring-offset-2");
-        });
-      });
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
