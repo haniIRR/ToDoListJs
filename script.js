@@ -106,18 +106,21 @@ addbtn.addEventListener("click", function (event) {
   //   updatebtn
   let updbtn = document.createElement("td");
   updbtn.className = "p-4 text-center";
+  updbtn.setAttribute("id", "updbtn");
+  updbtn.setAttribute("data-id", tbody.children.length + 1);
   updbtn.innerText = "✏️";
   tr.append(updbtn);
 
   //   delete
   let deletebtn = document.createElement("td");
   deletebtn.className = "p-4 text-center";
+  deletebtn.setAttribute("id", "delbtn");
   deletebtn.innerText = "🗑️";
   tr.append(deletebtn);
-  deletebtn.addEventListener("click", function (event) {
-    tr.remove();
-    Counter();
-  });
+  // deletebtn.addEventListener("click", function (event) {
+  //   tr.remove();
+  //   Counter();
+  // });
 
   tbody.appendChild(tr);
 
@@ -152,3 +155,15 @@ function ChangeStatus(event) {
 
   parent.appendChild(statusspan);
 }
+
+document.addEventListener("click", function (e) {
+  if (e.target.matches("#delbtn")) {
+    tr.remove();
+    Counter();
+  }
+  if (e.target.matches("#updbtn")) {
+    console.log(e.target.getAttribute("data-id"));
+  }
+});
+
+function update() {}
